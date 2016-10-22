@@ -14,8 +14,8 @@
         @if(Auth::user())
         <div id="navbar" class="navbar-collapse collapse"  style="float:left;">
             <ul class="nav navbar-nav">
-                <li class="active" style="margin-left:50px;"><a href="">Home</a></li>
-                <li style="margin-left:50px;"><a href="#about">Posts</a></li>
+                <li class="active" style="margin-left:50px;"><a href="/">Home</a></li>
+                <li style="margin-left:50px;"><a href="/post">Posts</a></li>
                 <li style="margin-left:50px;"><a href="#contact">Comments</a></li>
             </ul>
         </div>
