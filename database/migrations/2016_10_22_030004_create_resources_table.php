@@ -15,10 +15,11 @@ class CreateResourcesTable extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('filename');
             $table->string('storagename');
             $table->integer('user_id');
             $table->integer('size');
-            $table->integer('type');
+            $table->integer('post_id');
             $table->timestamps();
         });
     }
