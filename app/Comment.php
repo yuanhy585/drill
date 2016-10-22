@@ -11,7 +11,15 @@ class Comment extends Model
      */
     public function posts()
     {
-        return $this->belongsTo('App/Post');
+        return $this->belongsTo('App\Post');
     }
 
+
+    /*
+     * 评论与用户一对一
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

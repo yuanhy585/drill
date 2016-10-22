@@ -23,4 +23,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*
+     * 用户与文章一对多
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+    /*
+     * 用户与评论一对多
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
