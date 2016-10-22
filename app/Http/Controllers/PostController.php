@@ -44,5 +44,31 @@ class PostController extends Controller
         return view('post.show',compact('post'));
     }
 
+    public function edit($id)
+    {
+        $post = Post::where('id',$id)->first();
+        return view('post.edit', compact('post'));
+    }
 
+    public function update(Request $request,$id)
+    {
+        $post = Post::where('id',$id)->first();
+
+        $inputs = $request->all();
+
+        $post->title = $inputs['title'];
+        $post->subtitle = $inputs['subtitle'];
+        $post->content = $inputs['content'];
+
+        $post->save();
+        return redirect('/post');
+    }
+
+    public function destroy($id)
+    {
+        $post = Post::where('id',$id)->first();
+        $post->delete();
+
+        return back();
+    }
 }

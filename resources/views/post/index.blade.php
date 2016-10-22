@@ -17,6 +17,7 @@
                     <th style="min-width:250px;">title</th>
                     <th>subtitle</th>
                     <th>author</th>
+                    <th style="width:150px;">operation</th>
                 </tr>
                 </thead>
 
@@ -30,6 +31,10 @@
                         @else
                             <td></td>
                         @endif
+                        <td>
+                            <a class="btn btn-info" href="/post/{{$post->id}}/edit">编辑</a>
+                            <a class="btn btn-danger" href="/post/{{$post->id}}/delete">删除</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
