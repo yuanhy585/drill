@@ -17,6 +17,7 @@
                 <li class="active" style="margin-left:50px;"><a href="/">Home</a></li>
                 <li style="margin-left:50px;"><a href="/post">Posts</a></li>
                 <li style="margin-left:50px;"><a href="/comment">Comments</a></li>
+                <li style="margin-left:50px;"><a href="/areas">Personal Info</a></li>
             </ul>
         </div>
         @endif
