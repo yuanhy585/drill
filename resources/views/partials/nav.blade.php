@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav">
                 <li class="active" style="margin-left:50px;"><a href="/">Home</a></li>
                 <li style="margin-left:50px;"><a href="/post">Posts</a></li>
-                <li style="margin-left:50px;"><a href="#contact">Comments</a></li>
+                <li style="margin-left:50px;"><a href="/comment">Comments</a></li>
             </ul>
         </div>
         @endif

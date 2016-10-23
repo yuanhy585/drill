@@ -27,5 +27,7 @@
 
         <div class="form-group col-md-12">文章内容：{{$post->content}}</div>
     </div>
+
+    @include('post.comment')
 </div>
 @endsection

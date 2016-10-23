@@ -53,6 +53,7 @@ class PostController extends Controller
     public function update(Request $request,$id)
     {
         $post = Post::where('id',$id)->first();
+        // $post->update($request->all()); 不建议使用该方式，因为有时候部分字段不允许修改；
 
         $inputs = $request->all();
 
