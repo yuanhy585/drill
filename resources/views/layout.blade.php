@@ -19,8 +19,11 @@
     @include('partials.footer')
 
 
+
     <script src="/js/jquery-2.2.2.js"></script>
     <script src="/js/bootstrap.js"></script>
+
+    @include('scripts')
 </body>
 
 </html>
