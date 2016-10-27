@@ -26,6 +26,11 @@ Route::group(['middleware' => 'web'], function(){
         Route::resource('areas', 'AreaController');
         Route::post('ajax/province', 'AreaController@province');
 
+
+        //routes for class
+        Route::resource('class','ClassController');
+        Route::post('ajax/classes', 'ClassController@classes');
+
     });
 
 

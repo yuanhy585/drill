@@ -27,3 +27,33 @@
         });
     });
 </script>
+
+<script>
+    $("#class_id").change(function(){
+        var class_id = $("#class_id").val();
+        $.ajaxSetup({
+            headers:{'X-CSRF-TOKEN':'{{csrf_token()}}'}
+        });
+        $.ajax({
+            type:'POST',
+            url:'/ajax/classes',
+            data:{class_id:class_id},
+            dataType:'json',
+            success:function(data){
+                var strStudent = '';
+                $.each(data, function(i){
+                    strStudent += '<option value="';
+                    strStudent += data[i].id;
+                    strStudent += '">';
+                    strStudent += data[i].name;
+                    strStudent += '</option>';
+                });
+                $('#students').html('');
+                $('#students').append(strStudent);
+            },
+            error:function(xhr,type){
+                alert('错误！')
+            }
+        });
+    });
+</script>
