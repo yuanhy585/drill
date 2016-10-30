@@ -12,9 +12,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = DB::table('posts')->get();  // Post::all();
+        $posts = DB::table('posts')->paginate(3);  // Post::all();
 
-        return view('post.index',compact('posts'));
+        return view('post.index',['posts' => $posts]);
     }
 
 
