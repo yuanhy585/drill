@@ -2,14 +2,25 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div style="float:left;"><h4>我的文章列表</h4></div>
-
-            <div class="index_btn" >
-                <a class="btn btn-primary" href="/post/create">新建文章</a>
+        <form role="form">
+            <div class="row">
+                <h4 style="padding-left:15px;">我的文章列表</h4>
+                <br/>
+                <div class="form-group col-md-3">
+                    <input type="text" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    搜索
+                </button>
+                <div style="float:right;padding-right:20px;">
+                    <a class="btn btn-primary" href="/post/create">新建文章</a>
+                </div>
             </div>
-        </div>
-        <hr/>
+        </form>
+    </div>
+    <hr/>
+
+    <div class="container">
         <div>
             <table id="mytable" class="table table-bordered text-center">
                 <thead>
@@ -44,5 +55,4 @@
             {!! $posts->links() !!}
         </div>
     </div>
-
 @endsection
