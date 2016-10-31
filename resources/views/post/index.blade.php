@@ -6,13 +6,15 @@
         <form class="form-inline" action="/post" role="form">
             <div class="row">
                 <br/>
+
                 <div class="form-group col-md-3">
                     <input type="text" class="form-control"
                            name="findByUserName" placeholder="请输入关键字查询" />
+                    <button type="submit" class="btn btn-primary">
+                        搜索
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary">
-                    搜索
-                </button>
+
                 <div style="float:right;padding-right:20px;">
                     <a class="btn btn-primary" href="/post/create">新建文章</a>
                 </div>
