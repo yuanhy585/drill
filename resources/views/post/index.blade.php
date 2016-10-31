@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="container">
-        <form role="form">
+        <h4>我的文章列表</h4>
+        <form class="form-inline" action="/post" role="form">
             <div class="row">
-                <h4 style="padding-left:15px;">我的文章列表</h4>
                 <br/>
                 <div class="form-group col-md-3">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"
+                           name="findByUserName" placeholder="请输入关键字查询" />
                 </div>
                 <button type="submit" class="btn btn-primary">
                     搜索
@@ -52,7 +53,7 @@
             </table>
         </div>
         <div class="text-center">
-            {!! $posts->links() !!}
+            {!! $posts->appends(['select'=>isset($a)?json_encode($a):""])->render() !!}
         </div>
     </div>
 @endsection

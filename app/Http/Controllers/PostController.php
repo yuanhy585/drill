@@ -10,11 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = DB::table('posts')->paginate(3);  // Post::all();
+        $inputs = $request->has('select')?json_decode($request->input('select'),true):$request->all();
 
-        return view('post.index',['posts' => $posts]);
+        $posts = Post::whereHas('user', function($query) use ($inputs){
+            if(isset($inputs['findByUserName'])){
+                $query->where('name','LIKE','%'.$inputs['findByUserName'].'%');
+            }
+        })->paginate(5);  // Post::all();
+
+        return view('post.index',compact('posts'));
     }
 
 
